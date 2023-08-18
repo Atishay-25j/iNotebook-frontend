@@ -9,6 +9,7 @@ const Notes = (props) => {
   const { notes, getNotes ,editNote} = context;
   useEffect(() => {       
     if(localStorage.getItem('token')){
+      console.log("In notes");
       getNotes();
       // eslint-disable-next-line
     }

@@ -12,6 +12,7 @@ const NoteState = (props) => {
   const getNotes = async () => {
     //To do api call
     try {
+      console.log("In fetchNotes");
       const response = await fetch(`https://inotebookbackend-9oe5.onrender.com/api/notes/fetchallnotes`, {
         method: "GET",
          headers: {
@@ -26,7 +27,8 @@ const NoteState = (props) => {
       setNotes(json);
   
     } catch (error) {
-      console.log(error.message);
+      console.log("In fetchNotes error");
+      console.log(error.message,"Hey In fetch");
     }
     
   }
