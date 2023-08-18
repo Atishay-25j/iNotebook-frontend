@@ -13,7 +13,8 @@ const NoteState = (props) => {
     //To do api call
     try {
       console.log("In fetchNotes");
-      const response = await fetch(`https://inotebookbackend-9oe5.onrender.com/api/notes/fetchallnotes`, {
+      console.log(process.env.REACT_APP_LINK);
+      const response = await fetch(`${LINK}/api/notes/fetchallnotes`, {
         method: "GET",
          headers: {
           "Content-Type": "application/json",
@@ -21,6 +22,7 @@ const NoteState = (props) => {
   
         },
       });
+      console.log("After fetch notes")
       // eslint-disable-next-line
       const json = await response.json();
       // console.log(json);
