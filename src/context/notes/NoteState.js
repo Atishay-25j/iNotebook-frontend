@@ -12,10 +12,10 @@ const NoteState = (props) => {
   const getNotes = async () => {
     //To do api call
     try {
-      console.log("In fetchNotes");
-      console.log(process.env.REACT_APP_LINK);
-      console.log(localStorage.getItem('token'));
-      const response = await fetch(`https://inotebookbackend-9oe5.onrender.com/api/notes/fetchallnotes`, {
+      // console.log("In fetchNotes");
+      // console.log(process.env.REACT_APP_LINK);
+      // console.log(localStorage.getItem('token'));
+      const response = await fetch(`${LINK}/api/notes/fetchallnotes`, {
         method: "GET",
          headers: {
           "Content-Type": "application/json",
@@ -23,15 +23,15 @@ const NoteState = (props) => {
   
         },
       });
-      console.log("After fetch notes")
+      // console.log("After fetch notes")
       // eslint-disable-next-line
-      console.log(json);
+      // console.log(json);
       const json = await response.json();
       // console.log(json);
       setNotes(json);
   
     } catch (error) {
-      console.log("In fetchNotes error");
+      // console.log("In fetchNotes error");
       console.log(error.message,"Hey In fetch");
     }
     
