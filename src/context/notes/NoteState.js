@@ -14,6 +14,7 @@ const NoteState = (props) => {
     try {
       console.log("In fetchNotes");
       console.log(process.env.REACT_APP_LINK);
+      console.log(localStorage.getItem('token'));
       const response = await fetch(`https://inotebookbackend-9oe5.onrender.com/api/notes/fetchallnotes`, {
         method: "GET",
          headers: {

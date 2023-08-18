@@ -21,7 +21,7 @@ const Login = (props) => {
         });
         // eslint-disable-next-line
         const json = await response.json();
-        // console.log(json);
+        console.log("LoggedIn",json);
         if (json.success) {
             localStorage.setItem('token', json.authToken)
             navigate("/")
