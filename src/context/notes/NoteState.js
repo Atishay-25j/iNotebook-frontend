@@ -24,6 +24,7 @@ const NoteState = (props) => {
       });
       console.log("After fetch notes")
       // eslint-disable-next-line
+      console.log(json);
       const json = await response.json();
       // console.log(json);
       setNotes(json);
